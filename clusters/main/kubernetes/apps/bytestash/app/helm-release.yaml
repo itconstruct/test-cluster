@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: bytestash
+  namespace: bytestash
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: bytestash
+      version: 0.0.1
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+  values:
+    service:
+      main:
+        type: LoadBalancer
+        loadBalancerIP: "${BYTESTASH_IP}"
+    env:
+      JWT_SECRET: "${BYTESTASH_JWT}"
