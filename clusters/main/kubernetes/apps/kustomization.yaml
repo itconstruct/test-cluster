@@ -4,3 +4,4 @@ resources:
   - kubernetes-dashboard/ks.yaml
   - threadfin/ks.yaml
   - bytestash/ks.yaml
+  - netprobe/ks.yaml
