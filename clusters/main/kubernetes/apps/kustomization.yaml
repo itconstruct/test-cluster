@@ -5,3 +5,4 @@ resources:
   - threadfin/ks.yaml
   - bytestash/ks.yaml
   - netprobe/ks.yaml
+  - cloudflared/ks.yaml
