@@ -4,3 +4,7 @@ resources:
   - namespace.yaml
   - helm-release.yaml
   - volumeSnapshotClass.yaml
+  - ingress.yaml
+  - recurring-job-snapshot-cleanup.yaml
+  - recurring-job-snapshot-delete.yaml
+  - recurring-job-trim.yaml
