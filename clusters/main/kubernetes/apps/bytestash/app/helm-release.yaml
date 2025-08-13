@@ -8,30 +8,21 @@ spec:
   chart:
     spec:
       chart: bytestash
-      version: 1.0.1
+      version: 2.2.1
       sourceRef:
         kind: HelmRepository
         name: truecharts
         namespace: flux-system
   values:
-    service:
-      main:
-        type: LoadBalancer
-        loadBalancerIP: "${BYTESTASH_IP}"
     ingress:
       main:
         enabled: true
         ingressClassName: external
         integrations:
-          traefik:
-            enabled: false
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
         hosts:
           - host: bytestash.${DOMAIN_0}
-            paths:
-              - path: /
-                pathType: Prefix
     env:
       JWT_SECRET: "${BYTESTASH_JWT}"
